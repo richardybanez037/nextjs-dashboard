@@ -8,7 +8,9 @@ import {
   Revenue,
 } from './definitions';
 import { formatCurrency } from './utils';
-import { client } from '../query/route';
+import { db } from "@vercel/postgres";
+
+const client = await db.connect();
 
 export async function fetchRevenue() {
   try {
